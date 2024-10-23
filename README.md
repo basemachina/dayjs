@@ -1,3 +1,15 @@
+# Dayjs
+
+This repository is a fork of [iamkun/dayjs](https://github.com/iamkun/dayjs).
+
+The following are the main changes that have been made.
+
+## Changes
+
+- Support parsing 2-digit years with `YY` format.
+
+## About Dayjs
+
 English | [简体中文](./docs/zh-cn/README.zh-CN.md) | [日本語](./docs/ja/README-ja.md) | [Português Brasileiro](./docs/pt-br/README-pt-br.md) | [한국어](./docs/ko/README-ko.md) | [Español (España)](./docs/es-es/README-es-es.md) | [Русский](./docs/ru/README-ru.md) | [Türkçe](./docs/tr/README-tr.md) | [සිංහල](./docs/si/README-si.md) | [עברית](./docs/he/README-he.md)
 
 <p align="center"><a href="https://day.js.org/" target="_blank" rel="noopener noreferrer"><img width="550"
@@ -46,7 +58,7 @@ You can find more details, API, and other docs on [day.js.org](https://day.js.or
 ### Installation
 
 ```console
-npm install dayjs --save
+npm install @basemachina/dayjs --save
 ```
 
 📚[Installation Guide](https://day.js.org/docs/en/installation/installation)
