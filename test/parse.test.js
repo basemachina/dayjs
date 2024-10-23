@@ -212,4 +212,14 @@ describe('REGEX_PARSE', () => {
     expect(dayjs(date).valueOf()).toBe(moment(date).valueOf())
     expect(d).toBe(null)
   })
+
+  // check parse 2-digit years
+  // https://github.com/iamkun/dayjs/pull/1862
+  it('0001-01-01', () => {
+    const date = '0001-01-01'
+    const d = date.match(REGEX_PARSE)
+    expect(dayjs(date).isValid()).toBe(true)
+    expect(dayjs(date).year()).toBe(1)
+    expect(d.join('-')).toBe('0001-01-01-0001-01-01----')
+  })
 })
