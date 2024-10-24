@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 // basic usage
 dayjs().format()
 

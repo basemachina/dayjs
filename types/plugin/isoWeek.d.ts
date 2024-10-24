@@ -1,4 +1,4 @@
-import { PluginFunc, OpUnitType, ConfigType } from 'dayjs'
+import { PluginFunc, OpUnitType, ConfigType } from '@basemachina/dayjs'
 
 declare const plugin: PluginFunc
 export = plugin

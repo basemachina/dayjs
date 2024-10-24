@@ -1,5 +1,5 @@
 // Burmese [my]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'my',

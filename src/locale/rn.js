@@ -1,5 +1,5 @@
 // Kirundi [rn]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'rn',

@@ -1,5 +1,5 @@
 // Dutch (Belgium) [nl-be]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'nl-be',
