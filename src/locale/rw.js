@@ -1,5 +1,5 @@
 // Kinyarwanda (Rwanda) [rw]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'rw',

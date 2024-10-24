@@ -1,5 +1,5 @@
 // Amharic [am]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'am',

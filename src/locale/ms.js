@@ -1,5 +1,5 @@
 // Malay [ms]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 const locale = {
   name: 'ms',

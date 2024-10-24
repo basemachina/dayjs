@@ -1,4 +1,4 @@
-import { PluginFunc } from 'dayjs'
+import { PluginFunc } from '@basemachina/dayjs'
 
 declare module 'dayjs' {
   interface ConfigTypeMap {
