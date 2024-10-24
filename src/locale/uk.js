@@ -1,14 +1,22 @@
 // Ukrainian [uk]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
-const monthFormat = 'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split('_')
-const monthStandalone = 'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split('_')
+const monthFormat = 'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split(
+  '_'
+)
+const monthStandalone = 'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
+  '_'
+)
 
 const MONTHS_IN_FORMAT = /D[oD]?(\[[^[\]]*\]|\s)+MMMM?/
 
 function plural(word, num) {
   const forms = word.split('_')
-  return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]) // eslint-disable-line
+  return num % 10 === 1 && num % 100 !== 11
+    ? forms[0]
+    : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
+    ? forms[1]
+    : forms[2] // eslint-disable-line
 }
 function relativeTimeWithPlural(number, withoutSuffix, key) {
   const format = {
@@ -39,11 +47,15 @@ months.f = monthFormat
 
 const locale = {
   name: 'uk',
-  weekdays: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split('_'),
+  weekdays: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+    '_'
+  ),
   weekdaysShort: 'ндл_пнд_втр_срд_чтв_птн_сбт'.split('_'),
   weekdaysMin: 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
   months,
-  monthsShort: 'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split('_'),
+  monthsShort: 'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split(
+    '_'
+  ),
   weekStart: 1,
   relativeTime: {
     future: 'за %s',
@@ -74,4 +86,3 @@ const locale = {
 dayjs.locale(locale, null, true)
 
 export default locale
-

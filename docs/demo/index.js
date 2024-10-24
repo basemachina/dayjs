@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 // basic usage
 dayjs().format()
 
@@ -9,14 +9,19 @@ dayjs('2018-08-08').format()
 dayjs().format('YYYY-MM-DD')
 
 // locale
-dayjs().locale('zh-cn').format()
+dayjs()
+  .locale('zh-cn')
+  .format()
 
 // add
-dayjs().add(1, 'year').format()
+dayjs()
+  .add(1, 'year')
+  .format()
 
 // subtract
-dayjs().subtract(1, 'year').format()
+dayjs()
+  .subtract(1, 'year')
+  .format()
 
 // diff
 dayjs().diff(dayjs().add(1, 'year'), 'year')
-

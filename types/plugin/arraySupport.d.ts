@@ -1,8 +1,16 @@
-import { PluginFunc } from 'dayjs'
+import { PluginFunc } from '@basemachina/dayjs'
 
 declare module 'dayjs' {
   interface ConfigTypeMap {
-    arraySupport: [number?, number?, number?, number?, number?, number?, number?]
+    arraySupport: [
+      number?,
+      number?,
+      number?,
+      number?,
+      number?,
+      number?,
+      number?
+    ]
   }
 }
 

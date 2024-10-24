@@ -1,5 +1,5 @@
 // Kurdish [ku]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
 export const englishToArabicNumbersMap = {
   1: '١',
@@ -46,7 +46,9 @@ const locale = {
   name: 'ku',
   months,
   monthsShort: months,
-  weekdays: 'یەکشەممە_دووشەممە_سێشەممە_چوارشەممە_پێنجشەممە_هەینی_شەممە'.split('_'),
+  weekdays: 'یەکشەممە_دووشەممە_سێشەممە_چوارشەممە_پێنجشەممە_هەینی_شەممە'.split(
+    '_'
+  ),
   weekdaysShort: 'یەکشەم_دووشەم_سێشەم_چوارشەم_پێنجشەم_هەینی_شەممە'.split('_'),
   weekStart: 6,
   weekdaysMin: 'ی_د_س_چ_پ_هـ_ش'.split('_'),

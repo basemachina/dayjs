@@ -1,17 +1,29 @@
 // Russian [ru]
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 
-const monthFormat = 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
-const monthStandalone = 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_')
+const monthFormat = 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split(
+  '_'
+)
+const monthStandalone = 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
+  '_'
+)
 
-const monthShortFormat = 'янв._февр._мар._апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
-const monthShortStandalone = 'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split('_')
+const monthShortFormat = 'янв._февр._мар._апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split(
+  '_'
+)
+const monthShortStandalone = 'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split(
+  '_'
+)
 
 const MONTHS_IN_FORMAT = /D[oD]?(\[[^[\]]*\]|\s)+MMMM?/
 
 function plural(word, num) {
   const forms = word.split('_')
-  return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]) // eslint-disable-line
+  return num % 10 === 1 && num % 100 !== 11
+    ? forms[0]
+    : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
+    ? forms[1]
+    : forms[2] // eslint-disable-line
 }
 function relativeTimeWithPlural(number, withoutSuffix, key) {
   const format = {
@@ -47,7 +59,9 @@ monthsShort.f = monthShortFormat
 
 const locale = {
   name: 'ru',
-  weekdays: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split('_'),
+  weekdays: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split(
+    '_'
+  ),
   weekdaysShort: 'вск_пнд_втр_срд_чтв_птн_сбт'.split('_'),
   weekdaysMin: 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
   months,
@@ -78,7 +92,7 @@ const locale = {
     yy: relativeTimeWithPlural
   },
   ordinal: n => n,
-  meridiem: (hour) => {
+  meridiem: hour => {
     if (hour < 4) {
       return 'ночи'
     } else if (hour < 12) {
@@ -93,4 +107,3 @@ const locale = {
 dayjs.locale(locale, null, true)
 
 export default locale
-

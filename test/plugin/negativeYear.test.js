@@ -1,9 +1,8 @@
 import MockDate from 'mockdate'
-import dayjs from 'dayjs'
+import dayjs from '@basemachina/dayjs'
 import negativeYear from '../../src/plugin/negativeYear'
 import utc from '../../src/plugin/utc'
 import { REGEX_PARSE } from '../../src/constant'
-
 
 dayjs.extend(negativeYear)
 dayjs.extend(utc)
@@ -40,8 +39,16 @@ describe('negativeYear', () => {
   it('Add and subtract with negative years', () => {
     expect(dayjs('-2006').add(1, 'y')).toEqual(dayjs('-2005'))
     expect(dayjs('-2006').subtract(1, 'y')).toEqual(dayjs('-2007'))
-    expect(dayjs('-2006').add(1, 'y').format('YYYY')).toBe(dayjs('-2005').format('YYYY'))
-    expect(dayjs('-2006').subtract(1, 'y').format('YYYY')).toBe(dayjs('-2007').format('YYYY'))
+    expect(
+      dayjs('-2006')
+        .add(1, 'y')
+        .format('YYYY')
+    ).toBe(dayjs('-2005').format('YYYY'))
+    expect(
+      dayjs('-2006')
+        .subtract(1, 'y')
+        .format('YYYY')
+    ).toBe(dayjs('-2007').format('YYYY'))
   })
 
   it('Compare date with negative years', () => {
