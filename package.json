@@ -1,6 +1,6 @@
 {
   "name": "@basemachina/dayjs",
-  "version": "1.11.2",
+  "version": "1.11.3",
   "description": "A fork of iamkun/dayjs.",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
