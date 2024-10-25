@@ -196,12 +196,9 @@ const parseFormattedInput = (input, format, utc, dayjs) => {
     const m = minutes || 0
     const s = seconds || 0
     const ms = milliseconds || 0
-    
     const newDate = (() => {
       if (zone) {
-        return new Date(
-          Date.UTC(y, M, d, h, m, s, ms + zone.offset * 60 * 1000)
-        )
+        return new Date(Date.UTC(y, M, d, h, m, s, ms + (zone.offset * 60 * 1000)))
       }
       if (utc) {
         return new Date(Date.UTC(y, M, d, h, m, s, ms))
