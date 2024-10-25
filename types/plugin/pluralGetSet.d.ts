@@ -3,7 +3,7 @@ import { PluginFunc, UnitType, ConfigType } from '@basemachina/dayjs'
 declare const plugin: PluginFunc
 export = plugin
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface Dayjs {
     years(): number
 

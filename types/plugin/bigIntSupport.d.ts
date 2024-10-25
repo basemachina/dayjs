@@ -1,6 +1,6 @@
 import { PluginFunc } from '@basemachina/dayjs'
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface ConfigTypeMap {
     bigIntSupport: BigInt
   }

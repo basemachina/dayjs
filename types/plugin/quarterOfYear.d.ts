@@ -3,7 +3,7 @@ import { PluginFunc, ConfigType, QUnitType, OpUnitType } from '@basemachina/dayj
 declare const plugin: PluginFunc
 export = plugin
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface Dayjs {
     quarter(): number
 
