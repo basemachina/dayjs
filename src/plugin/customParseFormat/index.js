@@ -218,7 +218,7 @@ const parseFormattedInput = (input, format, utc, dayjs) => {
 
     // by default the js Date maps 2-digit years 0 - 99 to 1900 – 1999
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years
-    // and the setFullYear method could set the exact year, ex:
+    // and the setFullYear method sets the exact year, ex:
     // const date = new Date(98, 1) => Sun Feb 01 1998 00:00:00
     // date.setFullYear(98)         => Sat Feb 01 0098 00:00:00
     newDate.setFullYear(y)
