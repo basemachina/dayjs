@@ -5,7 +5,7 @@ export = plugin
 
 type ISOUnitType = OpUnitType | 'isoWeek';
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface Dayjs {
     isoWeekYear(): number
     isoWeek(): number

@@ -3,7 +3,7 @@ import { PluginFunc } from '@basemachina/dayjs'
 declare const plugin: PluginFunc
 export = plugin
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   export function max(dayjs: [Dayjs, ...Dayjs[]]): Dayjs
   export function max(noDates: never[]): null
   export function max(maybeDates: Dayjs[]): Dayjs | null

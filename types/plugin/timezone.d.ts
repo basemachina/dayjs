@@ -3,7 +3,7 @@ import { PluginFunc, ConfigType } from '@basemachina/dayjs'
 declare const plugin: PluginFunc
 export = plugin
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface Dayjs {
     tz(timezone?: string, keepLocalTime?: boolean): Dayjs
     offsetName(type?: 'short' | 'long'): string | undefined

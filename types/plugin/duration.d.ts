@@ -74,7 +74,7 @@ declare namespace plugin {
   }
 }
 
-declare module 'dayjs' {
+declare module '@basemachina/dayjs' {
   interface Dayjs {
     add(duration: plugin.Duration): Dayjs
     subtract(duration: plugin.Duration): Dayjs
