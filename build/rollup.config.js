@@ -7,7 +7,7 @@ module.exports = (config) => {
     input: {
       input,
       external: [
-        'dayjs'
+        '@basemachina/dayjs'
       ],
       plugins: [
         babel({
@@ -19,9 +19,9 @@ module.exports = (config) => {
     output: {
       file: fileName,
       format: 'umd',
-      name: name || 'dayjs',
+      name: name || '@basemachina/dayjs',
       globals: {
-        dayjs: 'dayjs'
+        '@basemachina/dayjs': '@basemachina/dayjs'
       },
       compact: true
     }
