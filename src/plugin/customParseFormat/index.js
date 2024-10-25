@@ -196,17 +196,32 @@ const parseFormattedInput = (input, format, utc, dayjs) => {
     const m = minutes || 0
     const s = seconds || 0
     const ms = milliseconds || 0
-    if (zone) {
-      return new Date(Date.UTC(y, M, d, h, m, s, ms + (zone.offset * 60 * 1000)))
-    }
-    if (utc) {
-      return new Date(Date.UTC(y, M, d, h, m, s, ms))
-    }
-    let newDate
-    newDate = new Date(y, M, d, h, m, s, ms)
-    if (week) {
-      newDate = dayjs(newDate).week(week).toDate()
-    }
+    
+    const newDate = (() => {
+      if (zone) {
+        return new Date(
+          Date.UTC(y, M, d, h, m, s, ms + zone.offset * 60 * 1000)
+        )
+      }
+      if (utc) {
+        return new Date(Date.UTC(y, M, d, h, m, s, ms))
+      }
+
+      const date = new Date(y, M, d, h, m, s, ms)
+      if (week) {
+        return dayjs(date)
+          .week(week)
+          .toDate()
+      }
+      return date
+    })()
+
+    // by default the js Date maps 2-digit years 0 - 99 to 1900 – 1999
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years
+    // and the setFullYear method sets the exact year, ex:
+    // const date = new Date(98, 1) => Sun Feb 01 1998 00:00:00
+    // date.setFullYear(98)         => Sat Feb 01 0098 00:00:00
+    newDate.setFullYear(y)
     return newDate
   } catch (e) {
     return new Date('') // Invalid Date

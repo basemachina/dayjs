@@ -24,6 +24,18 @@ afterEach(() => {
 it('does not break the built-in parsing', () => {
   const input = '2018-05-02 01:02:03.004'
   expect(dayjs(input).valueOf()).toBe(moment(input).valueOf())
+
+  // check parse 2-digit years
+  // https://github.com/iamkun/dayjs/pull/1862
+  const input2 = '0001-02-03 04:05:06.007'
+  const withFormat = dayjs(input2, 'YYYY-MM-DD HH:mm:ss.SSS')
+  const withoutFormat = dayjs(input2)
+  expect(withFormat.valueOf()).toBe(
+    moment(input2, 'YYYY-MM-DD HH:mm:ss.SSS').valueOf()
+  )
+  expect(withFormat.year()).toBe(1)
+  expect(withoutFormat.valueOf()).toBe(moment(input2).valueOf())
+  expect(withoutFormat.year()).toBe(1)
 })
 
 it('parse padded string', () => {
